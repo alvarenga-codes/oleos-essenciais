@@ -1,0 +1,158 @@
+/* src/pages/Cart/components/OrderSummary/OrderSummary.module.css */
+
+.summary {
+  background-color: var(--color-neutral);
+  border-radius: 8px;
+  padding: 32px;
+  /* Fica fixo enquanto a lista de itens rola */
+  position: sticky;
+  top: 96px; /* altura do header + folga */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-neutral-dark);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-neutral-dark);
+}
+
+.discount {
+  color: var(--color-secondary);
+}
+
+.shipping {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+}
+
+.totalValue {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* Campo de cupom */
+.coupon {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.couponLabel {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+}
+
+.couponRow {
+  display: flex;
+  gap: 8px;
+}
+
+.couponInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: #fff;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--color-neutral-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.couponInput:focus {
+  border-color: var(--color-primary);
+}
+
+.couponBtn {
+  padding: 10px 16px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  color: var(--color-neutral-dark);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.couponBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.couponError {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  color: var(--color-remove);
+}
+
+.checkout {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.checkout:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer p {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-dark);
+  opacity: 0.45;
+  text-align: center;
+}

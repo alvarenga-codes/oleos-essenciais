@@ -1,0 +1,57 @@
+/* src/pages/Cart/Cart.module.css */
+
+.page {
+  padding: var(--spacing-section) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: var(--color-secondary-dark);
+  margin-bottom: 40px;
+}
+
+/* Layout: 60% itens / 40% resumo */
+.layout {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Estado vazio */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 0;
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+}
+
+.emptyLink {
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+.emptyLink:hover {
+  opacity: 0.7;
+}

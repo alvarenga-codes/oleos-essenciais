@@ -1,0 +1,150 @@
+/* src/pages/Product/Product.module.css */
+
+.page {
+  padding: var(--spacing-section) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Layout de duas colunas — 55% imagem / 45% info */
+.layout {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.imageCol img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Tag estilo pílula verde */
+.tag {
+  display: inline-block;
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--color-neutral-dark);
+  line-height: 1.1;
+}
+
+/* Estrelas */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starFilled {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+.starEmpty {
+  color: var(--color-neutral);
+  font-size: 1.1rem;
+}
+
+.views {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+  margin-left: 8px;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-neutral-dark);
+  opacity: 0.8;
+}
+
+/* Especificações em duas colunas */
+.specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-neutral);
+  border-bottom: 1px solid var(--color-neutral);
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.specLabel {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+}
+
+.specValue {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-neutral-dark);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.addToCart {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addToCart:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.notFound {
+  text-align: center;
+  padding: 120px 32px;
+  font-family: var(--font-body);
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+}

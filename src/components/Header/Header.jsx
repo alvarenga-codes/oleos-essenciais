@@ -1,8 +1,9 @@
 // src/components/Header/Header.jsx
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
-import { useCart } from '../../context/CartContext';
+import { useCart } from '../../context/useCart';
 import IconSearch from '../../assets/icons/search.svg?react';
+// import svgCart
 
 // Ícones SVG inline — sem dependência externa por enquanto
 // function IconSearch() {

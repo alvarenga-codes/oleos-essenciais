@@ -34,10 +34,22 @@
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffeee2;
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.2s ease;
+}
+.navLink::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
 
 .navLink:hover,

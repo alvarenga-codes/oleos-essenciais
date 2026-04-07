@@ -1,0 +1,35 @@
+/* src/pages/Product/components/Breadcrumb.module.css */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.link {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.separator {
+  font-size: 0.8rem;
+  color: var(--color-neutral-dark);
+  opacity: 0.4;
+}
+
+.current {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-neutral-dark);
+}
