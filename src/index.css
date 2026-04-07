@@ -1,0 +1,48 @@
+/* Importando as fontes Plus Jakarta Sans, Newsreader e Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Variáveis globais — o "design system" do projeto */
+:root {
+  --color-bg: #fffbf9; /* fundo creme */
+  --color-primary: #b8865a; /* caramelo principal */
+  --color-primary-light: #ffeee2; /* caramelo claro para hover */
+  --color-primary-dark: #2e1500; /* caramelo escuro para hover */
+  --color-secondary: #4a5c3e; /* laranja suave para detalhes */
+  --color-secondary-light: #e2f8d0; /* verde claro para hover de detalhes */
+  --color-secondary-dark: #101f07; /* verde escuro para hover de detalhes */
+  --color-neutral: #f0ebe0; /* cinza claro para fundos neutros */
+  --color-neutral-light: #ffffff; /* branco para fundos neutros claros */
+  --color-neutral-dark: #323029; /* cinza escuro para texto neutro */
+  --color-remove: #c0392b; /* vermelho do "REMOVE" */
+
+  /* Tipografia */
+  --font-display: 'Newsreader', serif; /* títulos elegantes */
+  --font-body: 'Plus Jakarta Sans', sans-serif; /* textos corridos */
+  --font-label: 'Inter', sans-serif; /* rótulos e detalhes */
+
+  /* Espaçamentos base */
+  --max-width: 1200px;
+  --spacing-section: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-neutral-dark);
+  font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
