@@ -1,46 +1,36 @@
 import styles from './BenefitIcons.module.css';
+import RelaxamentoIcon from '../../../assets/icons/relaxamento.svg?react';
+import SuporteIcon from '../../../assets/icons/suporte-noturno.svg?react';
+import AromaterapiaIcon from '../../../assets/icons/aromaterapia.svg?react';
+import ClarezaIcon from '../../../assets/icons/clareza.svg?react';
+import RespiracaoIcon from '../../../assets/icons/respiracao.svg?react';
+import FocoIcon from '../../../assets/icons/foco.svg?react';
+import EmocionalIcon from '../../../assets/icons/emocional.svg?react';
+import PeleIcon from '../../../assets/icons/pele.svg?react';
+import MeditacaoIcon from '../../../assets/icons/meditacao.svg?react';
+import AncoragemIcon from '../../../assets/icons/ancoragem.svg?react';
+import RitualIcon from '../../../assets/icons/ritual.svg?react';
+import EnergiaIcon from '../../../assets/icons/energia.svg?react';
+import ResfriamentoIcon from '../../../assets/icons/resfriamento.svg?react';
+import HumorIcon from '../../../assets/icons/humor.svg?react';
+import LevezaIcon from '../../../assets/icons/leveza.svg?react';
 
 const icons = {
-  Relaxamento: (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.2"
-    >
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-      <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-      <line x1="9" y1="9" x2="9.01" y2="9" />
-      <line x1="15" y1="9" x2="15.01" y2="9" />
-    </svg>
-  ),
-  'Suporte Noturno': (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.2"
-    >
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-  ),
-  Aromaterapia: (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.2"
-    >
-      <path d="M12 2a5 5 0 0 1 5 5c0 3-5 8-5 8S7 10 7 7a5 5 0 0 1 5-5z" />
-      <circle cx="12" cy="7" r="1.5" />
-    </svg>
-  ),
+  Relaxamento: <RelaxamentoIcon width={28} height={28} />,
+  'Suporte Noturno': <SuporteIcon width={28} height={28} />,
+  Aromaterapia: <AromaterapiaIcon width={28} height={28} />,
+  'Clareza Mental': <ClarezaIcon width={28} height={28} />,
+  Respiração: <RespiracaoIcon width={28} height={28} />,
+  Foco: <FocoIcon width={28} height={28} />,
+  'Equilíbrio Emocional': <EmocionalIcon width={28} height={28} />,
+  Pele: <PeleIcon width={28} height={28} />,
+  Meditação: <MeditacaoIcon width={28} height={28} />,
+  Ancoragem: <AncoragemIcon width={28} height={28} />,
+  Ritual: <RitualIcon width={28} height={28} />,
+  Energia: <EnergiaIcon width={28} height={28} />,
+  Resfriamento: <ResfriamentoIcon width={28} height={28} />,
+  Humor: <HumorIcon width={28} height={28} />,
+  Leveza: <LevezaIcon width={28} height={28} />,
   // Fallback para benefícios sem ícone mapeado
   default: (
     <svg

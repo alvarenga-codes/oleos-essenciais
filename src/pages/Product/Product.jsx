@@ -66,7 +66,6 @@ function Product() {
         <div className={styles.layout}>
           {/* Coluna esquerda — imagem */}
           <div className={styles.imageCol}>
-            {/* TODO: ajuste o caminho da imagem em src/data/products.js */}
             <img src={product.image} alt={product.name} className={styles.image} />
           </div>
 
