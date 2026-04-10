@@ -64,3 +64,20 @@
 .icon:hover {
   color: var(--color-neutral-light);
 }
+
+@media (max-width: 650px) {
+  .inner {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .separador {
+    display: none;
+  }
+}

@@ -56,79 +56,85 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <Link to="/" className={styles.logo}>
-          Essenciais
-        </Link>
+    <>
+      <header className={styles.header}>
+        <div className={styles.inner}>
+          <Link to="/" className={styles.logo}>
+            Essenciais
+          </Link>
 
-        {/* Desktop */}
-        <nav className={styles.desktopNav}>
-          <NavLink to="/" className={styles.navLink}>
+          {/* Desktop nav — some em mobile */}
+          <nav className={styles.desktopNav}>
+            <NavLink to="/" className={styles.navLink}>
+              Compras
+            </NavLink>
+            <div className={styles.separador} />
+            <NavLink to="/rituais" className={styles.navLink}>
+              Como utilizar
+            </NavLink>
+            <div className={styles.separador} />
+            <NavLink to="/sobre" className={styles.navLink}>
+              Sobre
+            </NavLink>
+          </nav>
+
+          {/* Ações — search no desktop, carrinho e hamburger sempre */}
+          <div className={styles.search}>
+            <div className={styles.desktopSearch}>
+              <SearchInput placeholder="Buscar..." />
+            </div>
+
+            <Link to="/carrinho" className={styles.iconButton} aria-label="Carrinho">
+              <IconCart count={cartCount} />
+            </Link>
+
+            <button
+              className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+
+        {/* Search mobile — segunda linha, só aparece em mobile */}
+        <div className={styles.mobileSearch}>
+          <SearchInput className={styles.mobileSearchInput} placeholder="Buscar..." />
+        </div>
+
+        {/* Mobile Menu */}
+        <nav
+          ref={menuRef}
+          id="mobile-menu"
+          className={`${styles.mobileMenu} ${menuOpen ? styles.show : ''}`}
+          role="dialog"
+          aria-modal="true"
+        >
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>
             Compras
           </NavLink>
-          <div className={styles.separador} />
-          <NavLink to="/rituais" className={styles.navLink}>
+          <div className={styles.MobileSeparador} />
+          <NavLink to="/rituais" onClick={() => setMenuOpen(false)}>
             Como utilizar
           </NavLink>
-          <div className={styles.separador} />
-
-          <NavLink to="/sobre" className={styles.navLink}>
+          <div className={styles.MobileSeparador} />
+          <NavLink to="/sobre" onClick={() => setMenuOpen(false)}>
             Sobre
           </NavLink>
         </nav>
+      </header>
 
-        <div className={styles.actions}>
-          <button className={styles.iconButton} aria-label="Buscar">
-            <SearchInput placeholder="Buscar..." onSearch={(q) => console.log('Buscar por:', q)} />
-          </button>
-
-          <Link to="/carrinho" className={styles.iconButton} aria-label="Carrinho">
-            <IconCart count={cartCount} />
-          </Link>
-        </div>
-
-        {/* Hamburger */}
-        <button
-          className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-
-      {/* Overlay */}
+      {/* Overlay — fora do header para não causar overflow */}
       <div
         className={`${styles.overlay} ${menuOpen ? styles.show : ''}`}
         onClick={() => setMenuOpen(false)}
       />
-
-      {/* Mobile Menu */}
-      <nav
-        ref={menuRef}
-        id="mobile-menu"
-        className={`${styles.mobileMenu} ${menuOpen ? styles.show : ''}`}
-        role="dialog"
-        aria-modal="true"
-      >
-        <NavLink to="/" onClick={() => setMenuOpen(false)}>
-          Compras
-        </NavLink>
-        <div className={styles.MobileSeparador} />
-        <NavLink to="/rituais" onClick={() => setMenuOpen(false)}>
-          Como utilizar
-        </NavLink>
-        <div className={styles.MobileSeparador} />
-        <NavLink to="/sobre" onClick={() => setMenuOpen(false)}>
-          Sobre
-        </NavLink>
-      </nav>
-    </header>
+    </>
   );
 }
 

@@ -15,6 +15,14 @@
   justify-content: space-between;
 }
 
+.desktopSearch {
+  display: flex;
+}
+
+.mobileSearch {
+  display: none;
+}
+
 .logo {
   font-family: var(--font-display);
   font-style: italic;
@@ -44,7 +52,7 @@
   color: var(--color-neutral);
 }
 
-.actions {
+.search {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
@@ -135,7 +143,10 @@
 /* overlay */
 .overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
@@ -191,7 +202,6 @@
   background: var(--color-neutral);
 }
 
-/* mobile */
 @media (max-width: 900px) {
   .desktopNav {
     display: none;
@@ -199,5 +209,22 @@
 
   .hamburger {
     display: flex;
+  }
+
+  .desktopSearch {
+    display: none;
+  }
+
+  .mobileSearch {
+    display: flex;
+    padding: 0 24px 12px;
+    background: var(--color-primary);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobileSearch .mobileSearchInput {
+    max-width: 100%;
+    width: 100%;
   }
 }

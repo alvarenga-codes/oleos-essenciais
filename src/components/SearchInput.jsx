@@ -4,16 +4,15 @@ import SearchIcon from '../assets/icons/search.svg?react';
 import { products } from '../data/products';
 import styles from './SearchInput.module.css';
 
-function SearchInput({ placeholder = 'Buscar produto...' }) {
+function SearchInput({ placeholder = 'Buscar produto...', className = '' }) {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1); // navegação por teclado
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
-  // Filtra produtos conforme o usuário digita
   function handleChange(e) {
     const value = e.target.value;
     setQuery(value);
@@ -28,14 +27,12 @@ function SearchInput({ placeholder = 'Buscar produto...' }) {
     setSuggestions(filtered);
   }
 
-  // Navega para o produto ao clicar na sugestão
   function handleSelect(product) {
     setQuery(product.name);
     setSuggestions([]);
     navigate(`/produto/${product.slug}`);
   }
 
-  // Navegação por teclado: setas + Enter + Escape
   function handleKeyDown(e) {
     if (e.key === 'ArrowDown') {
       setActiveIndex((prev) => Math.min(prev + 1, suggestions.length - 1));
@@ -50,7 +47,6 @@ function SearchInput({ placeholder = 'Buscar produto...' }) {
     }
   }
 
-  // Fecha dropdown ao clicar fora
   useEffect(() => {
     function handleClickOutside(e) {
       if (!containerRef.current?.contains(e.target)) {
@@ -64,7 +60,7 @@ function SearchInput({ placeholder = 'Buscar produto...' }) {
   const showDropdown = isFocused && query.trim().length > 0;
 
   return (
-    <div className={styles.searchContainer} ref={containerRef}>
+    <div className={`${styles.searchContainer} ${className}`} ref={containerRef}>
       <input
         type="text"
         value={query}
@@ -92,7 +88,6 @@ function SearchInput({ placeholder = 'Buscar produto...' }) {
                 role="option"
                 aria-selected={index === activeIndex}
                 className={`${styles.dropdownItem} ${index === activeIndex ? styles.active : ''}`}
-                // mousedown antes do onBlur do input — mantém o clique funcionando
                 onMouseDown={() => handleSelect(product)}
               >
                 {product.name}
