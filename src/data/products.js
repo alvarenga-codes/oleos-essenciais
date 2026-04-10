@@ -2,14 +2,13 @@ export const products = [
   {
     id: 1,
     name: 'Lavender Serenity',
+    slug: 'lavender-serenity',
     tags: ['Floral', 'Calming', 'Restorative'],
-    price: [
-      {
-        '5ml': 22,
-        '10ml': 42,
-        '30ml': 110,
-      },
-    ],
+    price: {
+      '5ml': 22,
+      '10ml': 42,
+      '30ml': 110,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Provença, França',
@@ -25,14 +24,13 @@ export const products = [
   {
     id: 2,
     name: 'Eucalyptus Clarity',
+    slug: 'eucalyptus-clarity',
     tags: ['Frescor', 'Limpeza', 'Vitalidade'],
-    price: [
-      {
-        '5ml': 18,
-        '10ml': 38,
-        '30ml': 100,
-      },
-    ],
+    price: {
+      '5ml': 18,
+      '10ml': 38,
+      '30ml': 100,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Austrália',
@@ -48,13 +46,12 @@ export const products = [
   {
     id: 3,
     name: 'Rose Absolute',
+    slug: 'rose-absolute',
     tags: ['Rico', 'Comovente', 'Raro'],
-    price: [
-      {
-        '5ml': 48,
-        '10ml': 84,
-      },
-    ],
+    price: {
+      '5ml': 48,
+      '10ml': 84,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Bulgária',
@@ -70,14 +67,13 @@ export const products = [
   {
     id: 4,
     name: 'Frankincense Ritual',
+    slug: 'frankincense-ritual',
     tags: ['Terra', 'Espiritual', 'Antigo'],
-    price: [
-      {
-        '5ml': 35,
-        '10ml': 62,
-        '30ml': 160,
-      },
-    ],
+    price: {
+      '5ml': 35,
+      '10ml': 62,
+      '30ml': 160,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Omã',
@@ -93,14 +89,13 @@ export const products = [
   {
     id: 5,
     name: 'Peppermint Revival',
+    slug: 'peppermint-revival',
     tags: ['Resfriamento', 'Foco', 'Nitidez'],
-    price: [
-      {
-        '5ml': 28,
-        '10ml': 62,
-        '30ml': 120,
-      },
-    ],
+    price: {
+      '5ml': 28,
+      '10ml': 62,
+      '30ml': 120,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Oregon, EUA',
@@ -116,14 +111,13 @@ export const products = [
   {
     id: 6,
     name: 'Bergamot Bloom',
+    slug: 'bergamot-bloom',
     tags: ['Cítrico', 'Revigorante', 'Vibrante'],
-    price: [
-      {
-        '5ml': 28,
-        '10ml': 46,
-        '30ml': 120,
-      },
-    ],
+    price: {
+      '5ml': 28,
+      '10ml': 46,
+      '30ml': 120,
+    },
     volume: '10ml',
     unit: 'Garrafa',
     origin: 'Calábria, Itália',

@@ -7,7 +7,7 @@
 .inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 32px;
+  padding: 28px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,14 +17,14 @@
   display: block;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.25rem;
-  color: #fff;
-  margin-bottom: 8px;
+  font-size: var(--spacing-lg);
+  color: var(--color-neutral-light);
+  margin-bottom: var(--font-size-xs);
 }
 
 .tagline {
   font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.6;
@@ -33,12 +33,13 @@
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 32px;
 }
 
 .navLink {
   font-family: var(--font-label);
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -48,9 +49,18 @@
 }
 
 .navLink:hover {
-  color: #fff;
+  color: var(--color-neutral-light);
+}
+
+.separador {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .icon {
   color: rgba(255, 255, 255, 0.6);
+}
+.icon:hover {
+  color: var(--color-neutral-light);
 }

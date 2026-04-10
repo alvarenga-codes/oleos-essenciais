@@ -23,6 +23,20 @@
   /* Espaçamentos base */
   --max-width: 1200px;
   --spacing-section: 64px;
+  --spacing-unit: 1rem; /* base para espaçamento escalável */
+  --spacing-xs: calc(var(--spacing-unit) * 0.5); /*0.5rem*/
+  --spacing-sm: calc(var(--spacing-unit) * 0.75); /*0.75rem*/
+  --spacing-md: var(--spacing-unit); /*1rem*/
+  --spacing-lg: calc(var(--spacing-unit) * 2); /*2rem*/
+  --spacing-xl: calc(var(--spacing-unit) * 4); /*4rem*/
+
+  /*Tamanhos de fontes*/
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 2rem; /* 32px */
+  --font-size-xxl: 3rem; /* 48px */
 }
 
 * {
