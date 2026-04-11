@@ -146,3 +146,26 @@
   color: var(--color-neutral-dark);
   opacity: 0.5;
 }
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .imageCol {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--color-neutral);
+  }
+  .imageCol img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .imageCol:hover img {
+    transform: scale(1.04);
+  }
+}

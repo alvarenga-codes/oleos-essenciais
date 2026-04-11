@@ -27,12 +27,8 @@ function Product() {
 
   const product = products.find((p) => p.slug === slug);
 
-  // ✅ Substituir por
-  // price = { '5ml': 22, '10ml': 42, '30ml': 110 }
-  // Object.keys(price) = ['5ml', '10ml', '30ml']
   const volumes = product ? Object.keys(product.price) : [];
 
-  // Inicia no segundo volume (index 1), igual ao layout
   const [selectedVolume, setSelectedVolume] = useState(volumes[1] ?? volumes[0]);
 
   if (!product) {
@@ -43,15 +39,12 @@ function Product() {
     );
   }
 
-  // Preço reativo — atualiza sempre que selectedVolume muda
   const currentPrice = product.price[selectedVolume];
 
   function handleAddToCart() {
     addToCart(
       {
         ...product,
-        // Sobrescreve price com o valor unitário do volume escolhido
-        // para facilitar os cálculos no carrinho
         price: currentPrice,
       },
       selectedVolume
