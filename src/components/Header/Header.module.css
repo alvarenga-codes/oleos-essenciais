@@ -159,7 +159,7 @@
 /* mobile menu */
 .mobileMenu {
   position: absolute;
-  top: 100%; /* logo abaixo do header */
+  top: 100%;
   left: 0;
   width: 100%;
   background: var(--color-primary);
@@ -196,7 +196,8 @@
 
 .mobileMenu a {
   font-family: var(--font-body);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-md);
+  text-align: center;
   font-weight: 400;
   color: var(--color-neutral-light);
   text-decoration: none;

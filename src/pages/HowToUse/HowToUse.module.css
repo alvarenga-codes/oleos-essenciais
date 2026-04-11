@@ -289,7 +289,19 @@
     justify-content: space-between;
     padding-inline: 16px;
   }
-
+  .card:hover {
+    background-color: initial;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: none;
+    border-color: var(--color-neutral);
+  }
+  .listItem {
+    text-align: left;
+  }
+  .safetyItem {
+    text-align: left;
+  }
   .cardBody {
     margin-top: 16px;
   }

@@ -19,7 +19,7 @@
 .label {
   display: block;
   font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.15em;
   color: var(--color-primary);
   margin-bottom: 20px;
@@ -28,7 +28,7 @@
 .labelLight {
   display: block;
   font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.15em;
   color: rgba(255, 255, 255, 0.4);
   margin-bottom: 20px;
@@ -38,7 +38,7 @@
   font-family: var(--font-display);
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 300;
-  color: #fff;
+  color: var(--color-neutral-light);
   line-height: 1;
   margin-bottom: 40px;
 }
@@ -50,7 +50,7 @@
 
 .manifestoText {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--font-size-md);
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 20px;
@@ -83,7 +83,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 400;
-  color: #fff;
+  color: var(--color-neutral-light);
   line-height: 1.1;
   margin-bottom: 56px;
 }
@@ -118,14 +118,14 @@
 
 .pillarNumber {
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.1em;
   color: var(--color-primary);
 }
 
 .pillarTitle {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: var(--font-size-3lg);
   font-weight: 400;
   font-style: italic;
   color: var(--color-neutral-dark);
@@ -133,7 +133,7 @@
 
 .pillarDescription {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   line-height: 1.7;
   color: var(--color-neutral-dark);
   opacity: 0.7;
@@ -187,21 +187,21 @@
 
 .stepNumber {
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.1em;
   color: var(--color-primary);
 }
 
 .stepTitle {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: var(--font-size-2lg);
   font-weight: 400;
-  color: #fff;
+  color: var(--color-neutral-light);
 }
 
 .stepDescription {
   font-family: var(--font-body);
-  font-size: 0.825rem;
+  font-size: var(--font-size-sm);
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -221,7 +221,7 @@
 
 .sustainabilityText {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   line-height: 1.75;
   color: var(--color-neutral-dark);
   opacity: 0.65;
@@ -248,7 +248,7 @@
 }
 
 .commitmentIcon {
-  font-size: 1.1rem;
+  font-size: var(--font-size-md);
   color: var(--color-secondary);
   flex-shrink: 0;
   width: 24px;
@@ -257,7 +257,7 @@
 
 .commitmentLabel {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   color: var(--color-neutral-dark);
   opacity: 0.8;
 }
@@ -294,8 +294,37 @@
 .closingSignature {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: var(--font-size-md);
   color: var(--color-neutral-dark);
   opacity: 0.35;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .pillarCard {
+    padding: 24px 16px;
+  }
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+  .processSteps {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .stepConnector {
+    display: none;
+  }
+  .stepContent {
+    padding-right: 0;
+    text-align: center;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .sectionTitleLight {
+    margin-bottom: 32px;
+  }
+  .sustainabilityGrid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
 }
