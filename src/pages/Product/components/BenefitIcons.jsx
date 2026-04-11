@@ -14,6 +14,8 @@ import EnergiaIcon from '../../../assets/icons/energia.svg?react';
 import ResfriamentoIcon from '../../../assets/icons/resfriamento.svg?react';
 import HumorIcon from '../../../assets/icons/humor.svg?react';
 import LevezaIcon from '../../../assets/icons/leveza.svg?react';
+import CalmaIcon from '../../../assets/icons/calma.svg?react';
+import SensualIcon from '../../../assets/icons/sensualidade.svg?react';
 
 const icons = {
   Relaxamento: <RelaxamentoIcon width={28} height={28} />,
@@ -31,6 +33,8 @@ const icons = {
   Resfriamento: <ResfriamentoIcon width={28} height={28} />,
   Humor: <HumorIcon width={28} height={28} />,
   Leveza: <LevezaIcon width={28} height={28} />,
+  Calma: <CalmaIcon width={28} height={28} />,
+  Sensualidade: <SensualIcon width={28} height={28} />,
   // Fallback para benefícios sem ícone mapeado
   default: (
     <svg

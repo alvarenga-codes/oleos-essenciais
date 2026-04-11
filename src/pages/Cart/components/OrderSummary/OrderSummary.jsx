@@ -1,15 +1,12 @@
-// src/pages/Cart/components/OrderSummary/OrderSummary.jsx
 import { useState } from 'react';
 import { useCart } from '../../../../context/useCart';
 import styles from './OrderSummary.module.css';
 
-// Cupons válidos — em produção viria de uma API
 const VALID_COUPONS = {
-  ESSENCIAIS10: 0.1, // 10% de desconto
-  BOTANICA20: 0.2, // 20% de desconto
+  ESSENCIAIS10: 0.1,
+  BOTANICA20: 0.2,
 };
 
-// Frete grátis acima desse valor
 const FREE_SHIPPING_THRESHOLD = 150;
 
 function OrderSummary() {
@@ -32,7 +29,6 @@ function OrderSummary() {
     }
   }
 
-  // Desconto em reais
   const discountAmount = appliedCoupon ? cartSubtotal * appliedCoupon.discount : 0;
 
   const total = cartSubtotal - discountAmount;
@@ -80,7 +76,6 @@ function OrderSummary() {
             placeholder="Ex: ESSENCIAIS10"
             value={couponInput}
             onChange={(e) => setCouponInput(e.target.value)}
-            // Permite aplicar com Enter
             onKeyDown={(e) => e.key === 'Enter' && handleApplyCoupon()}
           />
           <button className={styles.couponBtn} onClick={handleApplyCoupon}>

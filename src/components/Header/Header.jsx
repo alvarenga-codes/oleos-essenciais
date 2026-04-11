@@ -1,3 +1,4 @@
+// src/components/Header/Header.jsx
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
@@ -29,6 +30,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
+  // Fecha com Escape
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setMenuOpen(false);
@@ -37,22 +39,12 @@ function Header() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  useEffect(() => {
-    const handleClick = (e) => {
-      if (!menuRef.current?.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    if (menuOpen) {
-      document.addEventListener('mousedown', handleClick);
-    }
-
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [menuOpen]);
-
+  // Bloqueia scroll do body quando menu está aberto
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [menuOpen]);
 
   return (
@@ -63,13 +55,13 @@ function Header() {
             Essenciais
           </Link>
 
-          {/* Desktop nav — some em mobile */}
+          {/* Desktop nav */}
           <nav className={styles.desktopNav}>
             <NavLink to="/" className={styles.navLink}>
               Compras
             </NavLink>
             <div className={styles.separador} />
-            <NavLink to="/rituais" className={styles.navLink}>
+            <NavLink to="/como-utilizar" className={styles.navLink}>
               Como utilizar
             </NavLink>
             <div className={styles.separador} />
@@ -78,8 +70,7 @@ function Header() {
             </NavLink>
           </nav>
 
-          {/* Ações — search no desktop, carrinho e hamburger sempre */}
-          <div className={styles.search}>
+          <div className={styles.actions}>
             <div className={styles.desktopSearch}>
               <SearchInput placeholder="Buscar..." />
             </div>
@@ -90,10 +81,9 @@ function Header() {
 
             <button
               className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Menu"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
             >
               <span />
               <span />
@@ -102,38 +92,39 @@ function Header() {
           </div>
         </div>
 
-        {/* Search mobile — segunda linha, só aparece em mobile */}
+        {/* Search mobile */}
         <div className={styles.mobileSearch}>
-          <SearchInput className={styles.mobileSearchInput} placeholder="Buscar..." />
+          <SearchInput placeholder="Buscar..." />
         </div>
 
-        {/* Mobile Menu */}
+        {/* Dropdown mobile — dentro do header, sem z-index conflict */}
         <nav
           ref={menuRef}
-          id="mobile-menu"
           className={`${styles.mobileMenu} ${menuOpen ? styles.show : ''}`}
-          role="dialog"
-          aria-modal="true"
+          aria-hidden={!menuOpen}
         >
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/" className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
             Compras
           </NavLink>
-          <div className={styles.MobileSeparador} />
-          <NavLink to="/rituais" onClick={() => setMenuOpen(false)}>
+          <div className={styles.mobileSeparador} />
+          <NavLink
+            to="/como-utilizar"
+            className={styles.mobileLink}
+            onClick={() => setMenuOpen(false)}
+          >
             Como utilizar
           </NavLink>
-          <div className={styles.MobileSeparador} />
-          <NavLink to="/sobre" onClick={() => setMenuOpen(false)}>
+          <div className={styles.mobileSeparador} />
+          <NavLink to="/sobre" className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
             Sobre
           </NavLink>
         </nav>
       </header>
 
-      {/* Overlay — fora do header para não causar overflow */}
-      <div
-        className={`${styles.overlay} ${menuOpen ? styles.show : ''}`}
-        onClick={() => setMenuOpen(false)}
-      />
+      {/* Overlay — fecha ao clicar fora */}
+      {menuOpen && (
+        <div className={styles.overlay} onClick={() => setMenuOpen(false)} aria-hidden="true" />
+      )}
     </>
   );
 }

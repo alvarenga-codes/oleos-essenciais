@@ -1,5 +1,3 @@
-/* src/pages/Cart/Cart.module.css */
-
 .page {
   padding: var(--spacing-section) 0;
 }
@@ -19,14 +17,16 @@
   margin-bottom: 40px;
 }
 
-/* Layout: 60% itens / 40% resumo */
 .layout {
   display: grid;
-  grid-template-columns: 60fr 40fr;
+  grid-template-columns: 3fr 2fr;
   gap: 48px;
   align-items: start;
 }
 
+.layout > * {
+  min-width: 0;
+}
 .itemsList {
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
 
 .emptyLink {
   font-family: var(--font-label);
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   color: var(--color-primary);
   text-decoration: none;
   letter-spacing: 0.06em;
@@ -54,4 +54,19 @@
 
 .emptyLink:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .itemsList {
+    width: 100%;
+    max-width: 100%;
+  }
+  .container {
+    padding: 0 16px;
+  }
 }

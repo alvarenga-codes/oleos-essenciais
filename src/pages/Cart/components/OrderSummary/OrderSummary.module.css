@@ -1,12 +1,9 @@
-/* src/pages/Cart/components/OrderSummary/OrderSummary.module.css */
-
 .summary {
   background-color: var(--color-neutral);
   border-radius: 8px;
   padding: 32px;
-  /* Fica fixo enquanto a lista de itens rola */
   position: sticky;
-  top: 96px; /* altura do header + folga */
+  top: 96px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -14,7 +11,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: var(--font-size-2lg);
   font-weight: 400;
   color: var(--color-neutral-dark);
 }
@@ -31,7 +28,7 @@
   display: flex;
   justify-content: space-between;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   color: var(--color-neutral-dark);
 }
 
@@ -41,7 +38,7 @@
 
 .shipping {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
 }
 
 .total {
@@ -55,11 +52,10 @@
 
 .totalValue {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: var(--font-size-2lg);
   color: var(--color-primary);
 }
 
-/* Campo de cupom */
 .coupon {
   display: flex;
   flex-direction: column;
@@ -68,7 +64,7 @@
 
 .couponLabel {
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.1em;
   color: var(--color-neutral-dark);
   opacity: 0.5;
@@ -84,9 +80,9 @@
   padding: 10px 14px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--color-neutral-light);
   font-family: var(--font-label);
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   letter-spacing: 0.06em;
   color: var(--color-neutral-dark);
   outline: none;
@@ -103,7 +99,7 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   font-weight: 500;
   letter-spacing: 0.08em;
   cursor: pointer;
@@ -119,7 +115,7 @@
 
 .couponError {
   font-family: var(--font-label);
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   color: var(--color-remove);
 }
 
@@ -127,10 +123,10 @@
   width: 100%;
   padding: 18px;
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-neutral-light);
   border: none;
   font-family: var(--font-label);
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   letter-spacing: 0.12em;
   cursor: pointer;
@@ -150,9 +146,22 @@
 
 .footer p {
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.04em;
   color: var(--color-neutral-dark);
   opacity: 0.45;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .summary {
+    position: static;
+    top: auto;
+  }
+  .couponRow {
+    flex-direction: column;
+  }
+  .couponBtn {
+    width: 100%;
+  }
 }

@@ -62,10 +62,10 @@
 
 @media (max-width: 650px) {
   .name {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3lg);
   }
 
   .price {
-    font-size: var(--font-size-2lg);
+    font-size: var(--font-size-lg);
   }
 }

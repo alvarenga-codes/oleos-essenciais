@@ -14,7 +14,6 @@ function Cart() {
         <h1 className={styles.title}>Carrinho de compras</h1>
 
         {cartItems.length === 0 ? (
-          // Estado vazio — carrinho sem itens
           <div className={styles.empty}>
             <p>Seu carrinho está vazio.</p>
             <Link to="/" className={styles.emptyLink}>
@@ -26,7 +25,6 @@ function Cart() {
             {/* Lista de itens */}
             <div className={styles.itemsList}>
               {cartItems.map((item) => (
-                // Chave única: id + volume (mesmo produto em volumes diferentes)
                 <CartItem key={`${item.id}-${item.selectedVolume}`} item={item} />
               ))}
             </div>

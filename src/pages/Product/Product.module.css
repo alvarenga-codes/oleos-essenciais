@@ -150,6 +150,7 @@
 @media (max-width: 980px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: var(--spacing-section);
   }
   .imageCol {
     width: 100%;

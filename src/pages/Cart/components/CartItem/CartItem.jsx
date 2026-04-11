@@ -21,12 +21,11 @@ function CartItem({ item }) {
 
   return (
     <div className={styles.item}>
-      {/* TODO: ajuste o caminho da imagem em src/data/products.js */}
       <img src={image} alt={name} className={styles.image} />
 
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
-        {/* Volume e unidade — ex: "10ML * GARRAFA" */}
+        {/* Volume e unidade  */}
         <p className={styles.volume}>
           {selectedVolume.toUpperCase()} * {unit.toUpperCase()}
         </p>
@@ -34,12 +33,7 @@ function CartItem({ item }) {
         {/* Controle de quantidade */}
         <div className={styles.quantityRow}>
           <div className={styles.quantity}>
-            <button
-              className={styles.qtyBtn}
-              onClick={handleDecrease}
-              // Desabilita o botão de diminuir quando quantidade é 1
-              disabled={quantity === 1}
-            >
+            <button className={styles.qtyBtn} onClick={handleDecrease} disabled={quantity === 1}>
               −
             </button>
             <span className={styles.qtyValue}>{quantity}</span>
