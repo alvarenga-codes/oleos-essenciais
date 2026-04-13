@@ -19,7 +19,7 @@ function ProductGrid() {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="colecoes">
       {/* Grid irregular de 3 colunas — igual ao layout */}
       <div className={styles.grid}>
         {currentProducts.map((product) => (

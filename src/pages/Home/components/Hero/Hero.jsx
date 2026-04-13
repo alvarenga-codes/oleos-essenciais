@@ -14,9 +14,9 @@ const Hero = () => {
           <span>Uma coleção selecionada de destilações terapêuticas,</span>
           <span>elaboradas com precisão clínica e intenção botânica.</span>
         </p>
-        <Link to="/" className={styles.cta}>
-          Coleções <span>→</span>
-        </Link>
+        <a href="#colecoes" className={styles.cta}>
+          Coleções →
+        </a>
       </div>
     </section>
   );

@@ -19,6 +19,7 @@ export const products = [
     rating: 4,
     views: 650,
     image: '/images/lavender.webp',
+    miniImage: '/images/mini-lavender.webp',
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ export const products = [
     rating: 4,
     views: 430,
     image: '/images/eucalyptus.webp',
+    miniImage: '/images/mini-eucalyptus.webp',
   },
   {
     id: 3,
@@ -60,6 +62,7 @@ export const products = [
     rating: 5,
     views: 820,
     image: '/images/rose-absolute.webp',
+    miniImage: '/images/mini-rose-absolute.webp',
   },
   {
     id: 4,
@@ -81,6 +84,7 @@ export const products = [
     rating: 5,
     views: 510,
     image: '/images/frankincense-ritual.webp',
+    miniImage: '/images/mini-frankincense-ritual.webp',
   },
   {
     id: 5,
@@ -102,6 +106,7 @@ export const products = [
     rating: 4,
     views: 390,
     image: '/images/peppermint-revival.webp',
+    miniImage: '/images/mini-peppermint-revival.webp',
   },
   {
     id: 6,
@@ -123,6 +128,7 @@ export const products = [
     rating: 4,
     views: 480,
     image: '/images/bergamot-bloom.webp',
+    miniImage: '/images/mini-bergamot-bloom.webp',
   },
   {
     id: 7,
@@ -144,6 +150,7 @@ export const products = [
     rating: 5,
     views: 740,
     image: '/images/sandalwood.webp',
+    miniImage: '/images/mini-sandalwood.webp',
   },
   {
     id: 8,
@@ -164,6 +171,7 @@ export const products = [
     rating: 5,
     views: 610,
     image: '/images/neroli.webp',
+    miniImage: '/images/mini-neroli.webp',
   },
   {
     id: 9,
@@ -185,6 +193,7 @@ export const products = [
     rating: 4,
     views: 355,
     image: '/images/vetiver.webp',
+    miniImage: '/images/mini-vetiver.webp',
   },
   {
     id: 10,
@@ -206,6 +215,7 @@ export const products = [
     rating: 4,
     views: 420,
     image: '/images/chamomile.webp',
+    miniImage: '/images/mini-chamomile.webp',
   },
   {
     id: 11,
@@ -227,6 +237,7 @@ export const products = [
     rating: 4,
     views: 290,
     image: '/images/clary.webp',
+    miniImage: '/images/mini-clary.webp',
   },
   {
     id: 12,
@@ -248,5 +259,6 @@ export const products = [
     rating: 4,
     views: 375,
     image: '/images/ylang.webp',
+    miniImage: '/images/mini-ylang.webp',
   },
 ];

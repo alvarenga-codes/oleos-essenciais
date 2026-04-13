@@ -1,12 +1,14 @@
-import React from 'react';
+import { lazy, Suspense } from 'react';
 import Hero from './components/Hero/Hero';
-import ProductGrid from './components/ProductGrid/ProductGrid';
+const ProductGrid = lazy(() => import('./components/ProductGrid/ProductGrid'));
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <ProductGrid />
+      <Suspense fallback={<div>Carregando produtos...</div>}>
+        <ProductGrid />
+      </Suspense>
     </>
   );
 };

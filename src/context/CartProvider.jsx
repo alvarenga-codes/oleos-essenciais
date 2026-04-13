@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CartContext } from './CartContext';
+import { useCartStorage } from './useCartStorage';
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+  const { load, save } = useCartStorage();
+  const [cartItems, setCartItems] = useState(() => load());
+
+  useEffect(() => {
+    save(cartItems);
+  }, [cartItems]);
 
   function addToCart(product, selectedVolume) {
     setCartItems((prev) => {

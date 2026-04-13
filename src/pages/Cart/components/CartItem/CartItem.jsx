@@ -43,7 +43,7 @@ function CartItem({ item }) {
           </div>
 
           <button className={styles.remove} onClick={handleRemove}>
-            REMOVE
+            REMOVER
           </button>
         </div>
       </div>

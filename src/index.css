@@ -14,6 +14,7 @@
   --color-neutral-light: #ffffff; /* branco para fundos neutros claros */
   --color-neutral-dark: #323029; /* cinza escuro para texto neutro */
   --color-remove: #c0392b; /* vermelho do "REMOVE" */
+  --color-success: #27ae60; /* verde para mensagens de sucesso */
 
   /* Tipografia */
   --font-display: 'Newsreader', serif; /* títulos elegantes */
@@ -47,6 +48,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {

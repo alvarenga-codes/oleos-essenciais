@@ -24,6 +24,7 @@ function StarRating({ rating, views }) {
 function Product() {
   const { slug } = useParams();
   const { addToCart } = useCart();
+  const [success, setSuccess] = useState(false);
 
   const product = products.find((p) => p.slug === slug);
 
@@ -49,6 +50,8 @@ function Product() {
       },
       selectedVolume
     );
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 3000);
   }
 
   return (
@@ -95,6 +98,7 @@ function Product() {
             <button className={styles.addToCart} onClick={handleAddToCart}>
               ADICIONAR NO CARRINHO
             </button>
+            {success && <p className={styles.success}>Produto adicionado!</p>}
 
             <BenefitIcons benefits={product.benefits} />
           </div>
