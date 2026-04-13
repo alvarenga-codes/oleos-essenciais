@@ -1,5 +1,4 @@
-// src/pages/Product/Product.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../data/products';
 import { useCart } from '../../context/useCart';
@@ -54,18 +53,40 @@ function Product() {
     setTimeout(() => setSuccess(false), 3000);
   }
 
+  function ImageResponsive({ product }) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return (
+      <div className={styles.imageCol}>
+        <img
+          src={isMobile ? product.miniImage : product.image}
+          alt={product.name}
+          className={styles.image}
+        />
+      </div>
+    );
+  }
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <Breadcrumb productName={product.name} />
 
         <div className={styles.layout}>
-          {/* Coluna esquerda — imagem */}
+          {/* Imagem */}
           <div className={styles.imageCol}>
-            <img src={product.image} alt={product.name} className={styles.image} />
+            <ImageResponsive product={product} />
           </div>
 
-          {/* Coluna direita — informações */}
+          {/* Informações */}
           <div className={styles.infoCol}>
             <span className={styles.tag}>{product.tags.slice(0, 2).join(' * ').toUpperCase()}</span>
 
