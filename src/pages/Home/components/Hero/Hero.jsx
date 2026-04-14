@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Arrow from '../../../../assets/icons/arrow.svg?react';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -16,7 +17,7 @@ const Hero = () => {
           <span>elaboradas com precisão clínica e intenção botânica.</span>
         </p>
         <a href="#colecoes" className={styles.cta}>
-          Coleções →
+          Coleções <Arrow className={styles.arrow} />
         </a>
       </div>
     </section>

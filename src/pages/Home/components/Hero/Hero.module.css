@@ -70,10 +70,10 @@
   padding: 16px 40px;
   transition: opacity 0.2s ease;
 }
-.cta span {
+.cta .arrow {
   transition: transform 0.2s ease;
 }
-.cta:hover span {
+.cta:hover .arrow {
   transform: translateX(4px);
 }
 .cta:hover {
