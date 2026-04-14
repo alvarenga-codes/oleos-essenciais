@@ -6,6 +6,7 @@ import Breadcrumb from './components/Breadcrumb';
 import VolumeSelector from './components/VolumeSelector';
 import BenefitIcons from './components/BenefitIcons';
 import styles from './Product.module.css';
+import Image from '../../Helper/Image';
 
 function StarRating({ rating, views }) {
   return (
@@ -67,7 +68,7 @@ function Product() {
 
     return (
       <div className={styles.imageCol}>
-        <img
+        <Image
           src={isMobile ? product.miniImage : product.image}
           alt={product.name}
           className={styles.image}

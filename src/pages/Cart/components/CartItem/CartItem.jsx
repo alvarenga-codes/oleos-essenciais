@@ -1,6 +1,6 @@
-// src/pages/Cart/components/CartItem/CartItem.jsx
 import { useCart } from '../../../../context/useCart';
 import styles from './CartItem.module.css';
+import Image from '../../../../Helper/Image';
 
 function CartItem({ item }) {
   const { updateQuantity, removeFromCart } = useCart();
@@ -21,7 +21,7 @@ function CartItem({ item }) {
 
   return (
     <div className={styles.item}>
-      <img src={image} alt={name} className={styles.image} />
+      <Image src={image} alt={name} className={styles.image} />
 
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>

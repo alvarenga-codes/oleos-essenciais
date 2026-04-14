@@ -60,6 +60,10 @@
 
 .icon {
   color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
 }
 .icon:hover {
   color: var(--color-neutral-light);

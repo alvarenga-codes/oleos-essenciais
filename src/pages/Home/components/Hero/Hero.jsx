@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
+        <img src="images/oils-hero.webp" alt="Hero" className={styles.image} fetchpriority="high" />
         <h1 className={styles.title}>
           <span>Pura Essência.</span>
           <span>Natureza Refinada.</span>

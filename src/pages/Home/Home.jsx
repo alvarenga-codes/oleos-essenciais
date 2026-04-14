@@ -6,7 +6,11 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Suspense fallback={<div>Carregando produtos...</div>}>
+      <Suspense
+        fallback={
+          <div style={{ textAlign: 'center', padding: '2rem' }}>Carregando produtos...</div>
+        }
+      >
         <ProductGrid />
       </Suspense>
     </>

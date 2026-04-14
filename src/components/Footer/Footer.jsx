@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import IconPlant from '../../assets/icons/plant.svg?react';
+import LoadTimeBadge from '../LoadTimeBadge/LoadTimeBadge';
 
 function Footer() {
   return (
@@ -48,6 +49,7 @@ function Footer() {
         {/* Ícone decorativo */}
         <div className={styles.icon}>
           <IconPlant />
+          <LoadTimeBadge />
         </div>
       </div>
     </footer>

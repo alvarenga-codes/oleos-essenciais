@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
+import Image from '../../../../Helper/Image';
 
 function ProductCard({ product }) {
   const { slug, name, tags, price, miniImage, volume } = product;
@@ -7,7 +8,7 @@ function ProductCard({ product }) {
   return (
     <Link to={`/produto/${slug}`} className={styles.card}>
       <div className={styles.imageWrapper}>
-        <img src={miniImage} alt={name} className={styles.image} loading="lazy" />
+        <Image src={miniImage} alt={name} className={styles.image} loading="lazy" />
       </div>
 
       <div className={styles.info}>
