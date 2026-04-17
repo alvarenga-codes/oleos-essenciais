@@ -5,7 +5,7 @@
   padding: 6px 12px;
   border-radius: 999px;
   font-family: var(--font-label);
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   letter-spacing: 0.08em;
   border: 1px solid currentColor;
 }
